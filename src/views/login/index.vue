@@ -122,7 +122,7 @@ const email = ref("");
 const login = async () => {
   console.log(email.value)
   try {
-    const response = await axios.post("http://localhost:5000/api/auth/signin", {
+    const response = await axios.post("https://express-supabase-social-oauth.vercel.app/api/auth/signin", {
       email: email.value,
     });
     alert("Login successful");
@@ -144,7 +144,7 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await axios.post("http://localhost:5000/api/auth/signin", {
+        const response = await axios.post("https://express-supabase-social-oauth.vercel.app/api/auth/signin", {
           email: this.email,
         });
         alert("Login successful");

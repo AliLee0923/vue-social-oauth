@@ -36,7 +36,7 @@ const { user, setUser } = useUserState();
 
 const logout = async () => {
   try {
-    await axios.post("http://localhost:5000/api/auth/signout", {
+    await axios.post("https://express-supabase-social-oauth.vercel.app/api/auth/signout", {
       token: "token", // Ideally, replace with actual token
     });
     setUser(null); // Clear user state after logout

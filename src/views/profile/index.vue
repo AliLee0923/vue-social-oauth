@@ -115,7 +115,7 @@ onMounted(async () => {
     window.localStorage.setItem("access_token", accessToken.value);
     window.localStorage.setItem("refresh_token", refreshToken);
     try {
-      const response = await axios.get("http://localhost:5000/api/auth/getuser", {
+      const response = await axios.get("https://express-supabase-social-oauth.vercel.app/api/auth/getuser", {
         params: { access_token: accessToken.value },
       });
       setUser(response.data.user);
@@ -153,7 +153,7 @@ const connectSocial = (profileType) => {
 
 const connectTwitter = async () => {
   try {
-    const response = await axios.get("http://localhost:5000/api/twitter/request-token", {
+    const response = await axios.get("https://express-supabase-social-oauth.vercel.app/api/twitter/request-token", {
       params: { access_token: accessToken.value },
     });
     const { oauth_token } = response.data;
@@ -174,7 +174,7 @@ const connectYoutube = async () => {
 
 const connectLinkedIn = async () => {
   try {
-    const requestUrl = `http://localhost:5000/api/linkedin/request-token?access_token=${encodeURIComponent(accessToken.value)}`;
+    const requestUrl = `https://express-supabase-social-oauth.vercel.app/api/linkedin/request-token?access_token=${encodeURIComponent(accessToken.value)}`;
     window.location.href = requestUrl;
   } catch (error) {
     console.error("Error starting LinkedIn OAuth flow:", error);
@@ -183,7 +183,7 @@ const connectLinkedIn = async () => {
 
 const connectInstagram = async () => {
   try {
-    const requestUrl = `http://localhost:5000/api/instagram/request-token?access_token=${encodeURIComponent(accessToken.value)}`;
+    const requestUrl = `https://express-supabase-social-oauth.vercel.app/api/instagram/request-token?access_token=${encodeURIComponent(accessToken.value)}`;
     window.location.href = requestUrl;
   } catch (error) {
     console.error("Error starting Instagram OAuth flow:", error);

@@ -56,10 +56,10 @@ export default {
     async submitComment() {
       try {
         const urlMap = {
-          Twitter: "http://localhost:5000/api/twitter/comment",
-          YouTube: "http://localhost:5000/api/youtube/comment",
-          LinkedIn: "http://localhost:5000/api/linkedin/comment",
-          Instagram: "http://localhost:5000/api/instagram/comment",
+          Twitter: "https://express-supabase-social-oauth.vercel.app/api/twitter/comment",
+          YouTube: "https://express-supabase-social-oauth.vercel.app/api/youtube/comment",
+          LinkedIn: "https://express-supabase-social-oauth.vercel.app/api/linkedin/comment",
+          Instagram: "https://express-supabase-social-oauth.vercel.app/api/instagram/comment",
         };
         const url = urlMap[this.accountType];
 

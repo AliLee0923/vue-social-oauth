@@ -27,7 +27,7 @@ onMounted(() => {
 const postTwitterComment = async () => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/twitter/comment",
+      "https://express-supabase-social-oauth.vercel.app/api/twitter/comment",
       {
         status: commentText.value,
         in_reply_to_status_id: tweetId.value,
